@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
              await saveToGoogleSheets(formData);
             
             // 임시로 로컬 스토리지에 저장
-            saveToLocalStorage(formData);
+            // saveToLocalStorage(formData);
             
             // 성공 메시지
             showAlert('success', '✅ 증상이 성공적으로 등록되었습니다!');
