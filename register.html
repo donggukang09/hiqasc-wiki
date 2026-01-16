@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신규 증상 등록 - HIQASC 위키</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🆕 신규 증상 등록</h1>
+            <p class="subtitle">DEVELOPED BY DONGGU KANG</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="form-container">
+            <div id="alertMessage"></div>
+            
+            <form id="symptomForm">
+                <div class="form-group">
+                    <label for="model">모델 분류 *</label>
+                    <select id="model" required>
+                        <option value="">선택하세요</option>
+                        <option value="ORIGINAL">ORIGINAL</option>
+                        <option value="VERTUO">VERTUO</option>
+                        <option value="BREVILLE">BREVILLE</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="machine">기종명 *</label>
+                    <input type="text" id="machine" placeholder="예: ENV120, CitiZ, Barista Express" required>
+                    <small>정확한 기종명을 입력해주세요</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="symptomTitle">증상 제목 *</label>
+                    <input type="text" id="symptomTitle" placeholder="예: 추출 시 이상 소음 발생" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="errorCode">에러 코드</label>
+                    <input type="text" id="errorCode" placeholder="예: E03, E12 (없으면 비워두세요)">
+                </div>
+
+                <div class="form-group">
+                    <label for="symptomDesc">증상 상세 설명 *</label>
+                    <textarea id="symptomDesc" placeholder="증상이 발생하는 상황, 소리/동작 등을 자세히 설명해주세요" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="condition">발생 조건</label>
+                    <textarea id="condition" placeholder="언제, 어떤 상황에서 발생하나요?"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="solution">해결 방법 *</label>
+                    <textarea id="solution" placeholder="단계별로 해결 방법을 작성해주세요" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="parts">필요 부품</label>
+                    <input type="text" id="parts" placeholder="예: 펌프모터(ABC123), 씰링(DEF456)">
+                    <small>부품명과 코드를 함께 입력해주세요</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="tags">증상 태그</label>
+                    <select id="tags" multiple size="5">
+                        <option value="소음">소음</option>
+                        <option value="누수">누수</option>
+                        <option value="전원">전원</option>
+                        <option value="추출불량">추출불량</option>
+                        <option value="온도">온도</option>
+                        <option value="버튼">버튼</option>
+                        <option value="램프">램프</option>
+                        <option value="청소">청소</option>
+                    </select>
+                    <small>Ctrl/Cmd 키를 누르고 여러 개 선택 가능</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="status">해결 상태 *</label>
+                    <select id="status" required>
+                        <option value="해결">✅ 해결</option>
+                        <option value="진행중">⏳ 진행중</option>
+                        <option value="미해결">❓ 미해결</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="author">작성자 *</label>
+                    <input type="text" id="author" placeholder="이름을 입력하세요" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">추가 메모</label>
+                    <textarea id="notes" placeholder="기타 특이사항이나 주의할 점"></textarea>
+                </div>
+
+                <div class="btn-group">
+                    <button type="submit" class="btn btn-primary btn-block">
+                        등록하기
+                    </button>
+                    <button type="button" class="btn btn-secondary btn-block" onclick="location.href='index.html'">
+                        취소
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 HIQASC Repair Department. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="register.js"></script>
+</body>
+</html>

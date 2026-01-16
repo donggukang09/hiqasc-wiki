@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HIQASC 수리부서 업무 위키</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>HIQASC 수리부서 업무 위키</h1>
+            <p class="subtitle">DEVELOPED BY DONGGU KANG</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="welcome-section">
+            <h2>환영합니다! 👋</h2>
+            <p>네스프레소 & 브레빌 커피머신 수리 정보를 공유하는 공간입니다.</p>
+        </div>
+
+        <div class="menu-grid">
+            <div class="menu-card" onclick="location.href='register.html'">
+                <div class="icon">🆕</div>
+                <h3>신규 증상 등록</h3>
+                <p>새로운 수리 증상을 등록합니다</p>
+            </div>
+
+            <div class="menu-card" onclick="location.href='search.html'">
+                <div class="icon">🔍</div>
+                <h3>증상 검색</h3>
+                <p>등록된 증상을 검색하고 조회합니다</p>
+            </div>
+
+            <div class="menu-card" onclick="location.href='manual.html'">
+                <div class="icon">📋</div>
+                <h3>수리 매뉴얼</h3>
+                <p>모델별 수리 가이드를 확인합니다</p>
+            </div>
+
+            <div class="menu-card" onclick="location.href='guide.html'">
+                <div class="icon">⚙️</div>
+                <h3>업무 가이드</h3>
+                <p>업무 프로세스 및 시스템 안내</p>
+            </div>
+        </div>
+
+        <div class="stats-section">
+            <h3>📊 현황</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalSymptoms">0</div>
+                    <div class="stat-label">등록된 증상</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="recentSymptoms">0</div>
+                    <div class="stat-label">최근 7일</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="solvedSymptoms">0</div>
+                    <div class="stat-label">해결됨</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 HIQASC Repair Department. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

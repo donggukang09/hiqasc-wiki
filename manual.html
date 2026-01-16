@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수리 매뉴얼 - HIQASC 위키</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>📋 수리 매뉴얼</h1>
+            <p class="subtitle">DEVELOPED BY DONGGU KANG</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="welcome-section">
+            <h2>모델별 수리 가이드</h2>
+            <p>네스프레소 & 브레빌 커피머신 모델별 수리 매뉴얼입니다.</p>
+        </div>
+
+        <div class="menu-grid">
+            <div class="menu-card">
+                <div class="icon">🔴</div>
+                <h3>ORIGINAL 라인</h3>
+                <p>CitiZ, Pixie, Essenza 등</p>
+                <ul style="text-align: left; margin-top: 15px; color: var(--text-secondary);">
+                    <li>기본 구조 및 부품</li>
+                    <li>일반적인 고장 증상</li>
+                    <li>분해/조립 순서</li>
+                    <li>주요 교체 부품</li>
+                </ul>
+            </div>
+
+            <div class="menu-card">
+                <div class="icon">🟣</div>
+                <h3>VERTUO 라인</h3>
+                <p>ENV120, Next, Plus 등</p>
+                <ul style="text-align: left; margin-top: 15px; color: var(--text-secondary);">
+                    <li>VERTUO 시스템 특징</li>
+                    <li>센서 및 모터 점검</li>
+                    <li>바코드 인식 문제</li>
+                    <li>청소 및 유지보수</li>
+                </ul>
+            </div>
+
+            <div class="menu-card">
+                <div class="icon">🟤</div>
+                <h3>BREVILLE</h3>
+                <p>Barista Express 등</p>
+                <ul style="text-align: left; margin-top: 15px; color: var(--text-secondary);">
+                    <li>그라인더 조정</li>
+                    <li>스팀 완드 수리</li>
+                    <li>압력 게이지 점검</li>
+                    <li>청소 및 관리</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="form-container">
+            <h3>🔧 공통 수리 프로세스</h3>
+            
+            <div class="detail-section">
+                <h4>1단계: 증상 확인</h4>
+                <p>
+                    • 고객 설명 청취<br>
+                    • 에러 코드 확인<br>
+                    • 실제 작동 테스트<br>
+                    • 위키에서 유사 증상 검색
+                </p>
+            </div>
+
+            <div class="detail-section">
+                <h4>2단계: 진단</h4>
+                <p>
+                    • 외관 점검<br>
+                    • 물/전기 연결 확인<br>
+                    • 소리/진동 분석<br>
+                    • 부품별 작동 테스트
+                </p>
+            </div>
+
+            <div class="detail-section">
+                <h4>3단계: 수리</h4>
+                <p>
+                    • 필요 부품 확인<br>
+                    • 안전 작업 준비<br>
+                    • 분해 순서 준수<br>
+                    • 부품 교체 또는 청소<br>
+                    • 조립 및 테스트
+                </p>
+            </div>
+
+            <div class="detail-section">
+                <h4>4단계: 품질 검사</h4>
+                <p>
+                    • 정상 작동 확인<br>
+                    • 누수 점검<br>
+                    • 소음 확인<br>
+                    • 최종 테스트
+                </p>
+            </div>
+
+            <div class="detail-section">
+                <h4>5단계: 문서화</h4>
+                <p>
+                    • 수리 내역 기록<br>
+                    • 새로운 증상이면 위키에 등록<br>
+                    • 사용 부품 재고 업데이트
+                </p>
+            </div>
+        </div>
+
+        <div class="stats-section mt-20">
+            <h3>⚠️ 안전 수칙</h3>
+            <div style="padding: 20px; background: var(--background); border-radius: 8px; margin-top: 15px;">
+                <p style="line-height: 1.8;">
+                    ✓ 수리 전 반드시 전원 차단<br>
+                    ✓ 뜨거운 부품 주의 (5분 이상 식힘)<br>
+                    ✓ 물기 제거 후 전기 부품 작업<br>
+                    ✓ 날카로운 부품 취급 시 장갑 착용<br>
+                    ✓ 분해 순서 사진 촬영 권장<br>
+                    ✓ 모르는 증상은 팀장에게 문의
+                </p>
+            </div>
+        </div>
+
+        <div class="text-center mt-20">
+            <button class="btn btn-secondary" onclick="location.href='index.html'">
+                메인으로 돌아가기
+            </button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 HIQASC Repair Department. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <style>
+        .detail-section {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: var(--background);
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .detail-section h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .detail-section p {
+            color: var(--text-primary);
+            line-height: 1.8;
+        }
+    </style>
+</body>
+</html>

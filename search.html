@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>증상 검색 - HIQASC 위키</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🔍 증상 검색</h1>
+            <p class="subtitle">DEVELOPED BY DONGGU KANG</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="search-container">
+            <h3>검색 및 필터</h3>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="증상, 기종명, 에러코드 검색...">
+                <button class="btn btn-primary" onclick="searchSymptoms()">검색</button>
+            </div>
+
+            <div class="filters">
+                <select id="filterModel" onchange="searchSymptoms()">
+                    <option value="">모든 모델</option>
+                    <option value="ORIGINAL">ORIGINAL</option>
+                    <option value="VERTUO">VERTUO</option>
+                    <option value="BREVILLE">BREVILLE</option>
+                </select>
+
+                <select id="filterStatus" onchange="searchSymptoms()">
+                    <option value="">모든 상태</option>
+                    <option value="해결">✅ 해결</option>
+                    <option value="진행중">⏳ 진행중</option>
+                    <option value="미해결">❓ 미해결</option>
+                </select>
+
+                <select id="filterTag" onchange="searchSymptoms()">
+                    <option value="">모든 태그</option>
+                    <option value="소음">소음</option>
+                    <option value="누수">누수</option>
+                    <option value="전원">전원</option>
+                    <option value="추출불량">추출불량</option>
+                    <option value="온도">온도</option>
+                    <option value="버튼">버튼</option>
+                    <option value="램프">램프</option>
+                    <option value="청소">청소</option>
+                </select>
+
+                <select id="sortBy" onchange="searchSymptoms()">
+                    <option value="date-desc">최신순</option>
+                    <option value="date-asc">오래된순</option>
+                    <option value="model">모델순</option>
+                </select>
+
+                <button class="btn btn-secondary" onclick="resetFilters()">필터 초기화</button>
+            </div>
+        </div>
+
+        <div class="stats-section">
+            <h3>📊 검색 결과</h3>
+            <p id="resultCount">총 <strong>0</strong>건의 증상이 등록되어 있습니다.</p>
+        </div>
+
+        <div id="resultsContainer" class="results-grid mt-20">
+            <!-- 검색 결과가 여기에 표시됩니다 -->
+            <div class="text-center" style="padding: 60px 20px;">
+                <div style="font-size: 3em; margin-bottom: 20px;">🔍</div>
+                <h3 style="color: var(--text-secondary);">등록된 증상을 불러오는 중...</h3>
+                <p style="color: var(--text-secondary); margin-top: 10px;">
+                    증상이 표시되지 않으면 Google Sheets 연동을 확인해주세요.
+                </p>
+            </div>
+        </div>
+
+        <div class="text-center mt-20">
+            <button class="btn btn-secondary" onclick="location.href='index.html'">
+                메인으로 돌아가기
+            </button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 HIQASC Repair Department. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- 상세보기 모달 -->
+    <div id="detailModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <style>
+        /* 모달 스타일 */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            overflow: auto;
+        }
+
+        .modal.active {
+            display: block;
+        }
+
+        .modal-content {
+            background-color: var(--card-bg);
+            margin: 5% auto;
+            padding: 40px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 800px;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .close {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 2em;
+            font-weight: bold;
+            color: var(--text-secondary);
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .close:hover {
+            color: var(--text-primary);
+        }
+
+        .detail-section {
+            margin-bottom: 25px;
+        }
+
+        .detail-section h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .detail-section p {
+            color: var(--text-primary);
+            line-height: 1.6;
+            white-space: pre-wrap;
+        }
+    </style>
+
+    <script src="search.js"></script>
+</body>
+</html>
