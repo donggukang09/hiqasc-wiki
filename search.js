@@ -45,7 +45,7 @@ function getLocalSymptoms() {
 
 // Google Sheets에서 데이터 가져오기 (설정 후 구현)
 async function fetchFromGoogleSheets() {
-    const SHEETS_URL = 'YOUR_GOOGLE_SHEETS_WEB_APP_URL';
+    const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbwaCYC3isyOWKx6-AkvJ1ShEfN5fqbqg__s20yvFNdN4NN3bjPfRAZQwBWsIOSkgK9N/exec';
     
     try {
         const response = await fetch(SHEETS_URL + '?action=getAll');
