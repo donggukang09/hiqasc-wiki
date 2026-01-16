@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         try {
             // Google Sheets에 저장 (설정 후 활성화)
-            // await saveToGoogleSheets(formData);
+             await saveToGoogleSheets(formData);
             
             // 임시로 로컬 스토리지에 저장
             saveToLocalStorage(formData);
