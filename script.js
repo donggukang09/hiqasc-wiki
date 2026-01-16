@@ -6,7 +6,7 @@
 // Google Sheets 설정
 const CONFIG = {
     // TODO: Google Sheets 웹 앱 URL을 여기에 입력하세요
-    SHEETS_URL: 'YOUR_GOOGLE_SHEETS_WEB_APP_URL_HERE',
+    SHEETS_URL: 'https://script.google.com/macros/s/AKfycbwaCYC3isyOWKx6-AkvJ1ShEfN5fqbqg__s20yvFNdN4NN3bjPfRAZQwBWsIOSkgK9N/exec',
     // 또는 직접 Sheets API 사용 시
     SHEET_ID: 'YOUR_SHEET_ID_HERE',
     API_KEY: 'YOUR_API_KEY_HERE'
