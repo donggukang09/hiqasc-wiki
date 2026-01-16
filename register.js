@@ -66,7 +66,7 @@ function saveToLocalStorage(data) {
 
 // Google Sheets에 저장 (설정 후 구현)
 async function saveToGoogleSheets(data) {
-    const SHEETS_URL = 'YOUR_GOOGLE_SHEETS_WEB_APP_URL';
+    const SHEETS_ = 'https://script.google.com/macros/s/AKfycbwaCYC3isyOWKx6-AkvJ1ShEfN5fqbqg__s20yvFNdN4NN3bjPfRAZQwBWsIOSkgK9N/exec';
     
     const response = await fetch(SHEETS_URL, {
         method: 'POST',
