@@ -25,7 +25,7 @@ async function loadSymptoms() {
         allSymptoms = getLocalSymptoms();
         
         // Google Sheets 연동 시 사용할 코드:
-        // allSymptoms = await fetchFromGoogleSheets();
+        allSymptoms = await fetchFromGoogleSheets();
         
         filteredSymptoms = allSymptoms;
         displayResults(filteredSymptoms);
