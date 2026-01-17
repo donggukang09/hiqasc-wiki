@@ -1,4 +1,3 @@
-// 캐시 무효화: 2025-01-16 22:35
 // ========================================
 // HIQASC 수리부서 위키 - 증상 검색
 // DEVELOPED BY DONGGU KANG
@@ -26,7 +25,7 @@ async function loadSymptoms() {
         allSymptoms = getLocalSymptoms();
         
         // Google Sheets 연동 시 사용할 코드:
-        allSymptoms = await fetchFromGoogleSheets();
+        // allSymptoms = await fetchFromGoogleSheets();
         
         filteredSymptoms = allSymptoms;
         displayResults(filteredSymptoms);
@@ -46,7 +45,7 @@ function getLocalSymptoms() {
 
 // Google Sheets에서 데이터 가져오기 (설정 후 구현)
 async function fetchFromGoogleSheets() {
-    const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbwaCYC3isyOWKx6-AkvJ1ShEfN5fqbqg__s20yvFNdN4NN3bjPfRAZQwBWsIOSkgK9N/exec';
+    const SHEETS_URL = 'YOUR_GOOGLE_SHEETS_WEB_APP_URL';
     
     try {
         const response = await fetch(SHEETS_URL + '?action=getAll');
