@@ -20,11 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // 증상 데이터 로드
 async function loadSymptoms() {
     try {
-        // TODO: Google Sheets에서 데이터 가져오기
-        // 현재는 로컬 스토리지에서 가져오기
-        allSymptoms = getLocalSymptoms();
-        
-        // Google Sheets 연동 시 사용할 코드:
+        // Google Sheets에서 데이터 가져오기
         allSymptoms = await fetchFromGoogleSheets();
         
         filteredSymptoms = allSymptoms;
@@ -43,14 +39,34 @@ function getLocalSymptoms() {
     return data ? JSON.parse(data) : getSampleData();
 }
 
-// Google Sheets에서 데이터 가져오기 (설정 후 구현)
+// Google Sheets에서 데이터 가져오기
 async function fetchFromGoogleSheets() {
     const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbwaCYC3isyOWKx6-AkvJ1ShEfN5fqbqg__s20yvFNdN4NN3bjPfRAZQwBWsIOSkgK9N/exec';
     
     try {
         const response = await fetch(SHEETS_URL + '?action=getAll');
         const data = await response.json();
-        return data;
+        
+        // 한글 헤더를 영어로 매핑
+        const mappedData = data.map(item => ({
+            date: item['날짜'] ? new Date(item['날짜']).toISOString().split('T')[0] : '',
+            time: item['시간'] || '',
+            model: item['모델'] || '',
+            machine: item['기종'] || '',
+            symptomTitle: item['증상제목'] || '',
+            errorCode: item['에러코드'] || '',
+            symptomDesc: item['증상설명'] || '',
+            condition: item['발생조건'] || '',
+            solution: item['해결방법'] || '',
+            parts: item['필요부품'] || '',
+            tags: item['태그'] ? item['태그'].split(',').map(t => t.trim()) : [],
+            status: item['상태'] || '',
+            author: item['작성자'] || '',
+            notes: item['메모'] || '',
+            id: item['ID'] || ''
+        }));
+        
+        return mappedData;
     } catch (error) {
         console.error('Google Sheets 연동 오류:', error);
         return [];
@@ -300,42 +316,7 @@ function getStatusIcon(status) {
 
 // 샘플 데이터 (테스트용)
 function getSampleData() {
-    return [
-        {
-            id: 'SYM001',
-            date: '2025-01-15',
-            time: '14:30:00',
-            model: 'VERTUO',
-            machine: 'ENV120',
-            symptomTitle: '추출 시 이상 소음 발생',
-            errorCode: 'E03',
-            symptomDesc: '커피 추출 버튼을 누르면 "드드드" 하는 큰 소음이 발생합니다. 정상 추출은 되지만 소음이 매우 심합니다.',
-            condition: '매번 추출할 때마다 발생하며, 특히 아침 첫 추출 시 더 심합니다.',
-            solution: '1. 펌프 모터 연결부 확인\n2. 물탱크 분리 후 재장착\n3. 펌프 모터 교체 필요',
-            parts: '펌프모터(NV-PUMP-120)',
-            tags: ['소음', '펌프'],
-            status: '해결',
-            author: '강동구',
-            notes: '펌프 모터 교체 후 정상 작동 확인'
-        },
-        {
-            id: 'SYM002',
-            date: '2025-01-14',
-            time: '10:15:00',
-            model: 'ORIGINAL',
-            machine: 'CitiZ',
-            symptomTitle: '물 누수 문제',
-            errorCode: '',
-            symptomDesc: '커피 추출 후 하단부에서 물이 새어나옵니다.',
-            condition: '추출 완료 후 5-10초 후 발생',
-            solution: '1. 물탱크 씰링 점검\n2. 드립트레이 확인\n3. 씰링 교체',
-            parts: '워터탱크씰(OR-SEAL-01)',
-            tags: ['누수'],
-            status: '진행중',
-            author: '김수리',
-            notes: '부품 주문 완료, 입고 대기 중'
-        }
-    ];
+    return [];
 }
 
 // 모달 외부 클릭 시 닫기
